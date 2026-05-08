@@ -1,0 +1,174 @@
+/* ============================================================
+        DESIGN TOKENS & RESET
+    ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #fcfaf7;
+  --surface: #f2eee6;
+  --surface2: #e8e3d9;
+  --border: #d6cfc2;
+  --accent: #b08d00;
+  --accent2: #bc551d;
+  --accent3: #3e8a78;
+  --ok: #2d8a4e;
+  --ok-bg: rgba(76, 175, 114, 0.15);
+  --fail: #c53030;
+  --fail-bg: rgba(224, 85, 85, 0.15);
+  --text: #242220;
+  --muted: #706a5e;
+  --rule-w: 680px;
+  --radius: 8px;
+  --mono: "JetBrains Mono", monospace;
+  --serif: "Playfair Display", serif;
+  --sans: "Lato", sans-serif;
+  --c1: #ba9b21;
+  --c2: #ecca40;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent2);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ============================================================
+        HEADER
+    ============================================================ */
+header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -1px;
+  text-shadow: 0 0 60px rgba(232, 200, 74, 0.25);
+  line-height: 1.1;
+}
+
+header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+        MAIN LAYOUT
+    ============================================================ */
+#password-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1rem 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+        RULES LIST
+    ============================================================ */
+#rules-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ============================================================
+        Confirm Button
+    ============================================================ */
+.confirm-password-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1.2rem;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.confirm-password-button:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.confirmation-box {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  font-family: var(--mono);
+}
+
+.confirmation-box.ok {
+  background: var(--ok-bg);
+  border-color: var(--ok);
+}
+
+.confirmation-box.error {
+  background: var(--fail-bg);
+  border-color: var(--fail);
+}
+
+/* ============================================================
+        SCROLLBAR
+    ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.jvnhbqkqw {
+  color: var(--c2);
+}
+
+.zvrhlacse {
+  color: var(--c1);
+}
