@@ -280,7 +280,7 @@ export const RULES: Rule[] = [
     title: "Unzureichende Passwortstärke",
     icon: "💪",
     check: (pw: string) =>
-      normalizeEmoji(pw).split(normalizeEmoji("🏋️")).length - 1 ===
+      normalizeEmoji(pw).split(normalizeEmoji("🏋️")).length - 1 >=
       STRENGTH_NUM,
     description: (pw: string) => {
       const pct: number =
